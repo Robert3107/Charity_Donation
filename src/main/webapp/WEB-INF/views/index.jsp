@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 
-    <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css"/>"/>
 </head>
 <body>
 <header class="header--main-page">
@@ -19,14 +19,7 @@
             <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
             <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
         </ul>
-
-        <ul>
-            <li><a href="#" class="btn btn--without-border active">Start</a></li>
-            <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
-            <li><a href="#" class="btn btn--without-border">O nas</a></li>
-            <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
-        </ul>
+        <%@include file="jspf/header.jsp"%>
     </nav>
 
     <div class="slogan container container--90">
@@ -91,11 +84,13 @@
 <section class="about-us">
     <div class="about-us--text">
         <h2>O nas</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero
-            optio esse quisquam illo omnis.</p>
-        <img src="<c:url value="resources/images/signature.svg"/>" class="about-us--text-signature" alt="Signature"/>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas
+            vitae animi rem pariatur incidunt libero optio esse quisquam illo omnis.
+        </p>
+        <img src="${pageContext.request.contextPath}/resources/images/signature.svg"/>
     </div>
-    <div class="about-us--image"><img src="<c:url value="resources/images/about-us.jpg"/>" alt="People in circle"/>
+    <div class="about-us--image">
+        <img src="${pageContext.request.contextPath}/resources/images/about-us.jpg"/>
     </div>
 </section>
 
@@ -134,32 +129,7 @@
 
         </ul>
     </div>
-
 </section>
-
-<footer>
-    <div class="contact">
-        <h2>Skontaktuj się z nami</h2>
-        <h3>Formularz kontaktowy</h3>
-        <form class="form--contact">
-            <div class="form-group form-group--50"><input type="text" name="name" placeholder="Imię"/></div>
-            <div class="form-group form-group--50"><input type="text" name="surname" placeholder="Nazwisko"/></div>
-
-            <div class="form-group"><textarea name="message" placeholder="Wiadomość" rows="1"></textarea></div>
-
-            <button class="btn" type="submit">Wyślij</button>
-        </form>
-    </div>
-    <div class="bottom-line">
-        <span class="bottom-line--copy">Copyright &copy; 2018</span>
-        <div class="bottom-line--icons">
-            <a href="#" class="btn btn--small"><img src="images/icon-facebook.svg"/></a> <a href="#"
-                                                                                            class="btn btn--small"><img
-                src="images/icon-instagram.svg"/></a>
-        </div>
-    </div>
-</footer>
-
-<script src="<c:url value="resources/js/app.js"/>"></script>
+<%@include file="jspf/footer.jsp"%>
 </body>
 </html>
