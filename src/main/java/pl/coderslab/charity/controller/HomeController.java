@@ -12,19 +12,19 @@ import pl.coderslab.charity.repository.InstitutionRepository;
 @RequestMapping("/")
 public class HomeController {
 
-    private InstitutionRepository institutionRepository;
-    private DonationRepository donationRepository;
+    private final InstitutionRepository institutionRepository;
+    private final DonationRepository donationRepository;
 
     public HomeController(InstitutionRepository institutionRepository, DonationRepository donationRepository) {
         this.institutionRepository = institutionRepository;
         this.donationRepository = donationRepository;
     }
 
-
-    @GetMapping("/")
+    @GetMapping("")
     public String homeAction(Model model){
         model.addAttribute("institutions", institutionRepository.findAll());
-        model.addAttribute("donations", donationRepository.count());
+        model.addAttribute("amountBags", donationRepository.countAllDonatedSacks());
+        model.addAttribute("amountDonation", donationRepository.count());
         return "index";
     }
 
