@@ -42,6 +42,6 @@
         </div>
       </form>
     </section>
-  <%@include file="jspf/footer.jsp"%>
+  <%@include file="jspf/footer.jsp "%>
   </body>
 </html>

@@ -33,6 +33,23 @@ public class Donation {
     private LocalTime pickUpTime;
     private String pickUpComment;
 
+    public Donation(Long id, int quantity, List<Category> categoryList, Institution institution, String street,
+                    String city, String zipCode, LocalDate pickUpDate, LocalTime pickUpTime, String pickUpComment) {
+        this.id = id;
+        this.quantity = quantity;
+        this.categoryList = categoryList;
+        this.institution = institution;
+        this.street = street;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.pickUpDate = pickUpDate;
+        this.pickUpTime = pickUpTime;
+        this.pickUpComment = pickUpComment;
+    }
+
+    public Donation() {
+    }
+
     public Long getId() {
         return id;
     }
