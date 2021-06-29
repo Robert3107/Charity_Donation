@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <ul>
-    <li><a href="http://localhost:8080/" class="btn btn--without-border active">Start</a></li>
+    <li><a href="<c:url value="/" />" class="btn btn--without-border active">Start</a></li>
     <li><a href="index.html#steps" class="btn btn--without-border">O co chodzi?</a></li>
     <li><a href="index.html#about-us" class="btn btn--without-border">O nas</a></li>
     <li><a href="index.html#help" class="btn btn--without-border">Fundacje i organizacje</a></li>

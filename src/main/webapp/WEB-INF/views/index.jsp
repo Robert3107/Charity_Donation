@@ -10,15 +10,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css"/>
-    "/>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
 <header class="header--main-page">
     <nav class="container container--70">
         <ul class="nav--actions">
-            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
-            <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+            <li><a href="<c:url value="/login"/> " class="btn btn--small btn--without-border">Zaloguj</a></li>
+            <li><a href="<c:url value="/registration" />" class="btn btn--small btn--highlighted">Załóż konto</a></li>
         </ul>
         <%@include file="jspf/header.jsp" %>
     </nav>
@@ -78,7 +77,7 @@
         </div>
     </div>
 
-    <a href="#" class="btn btn--large">Załóż konto</a>
+    <a href="<c:url value="/registration" />" class="btn btn--large">Załóż konto</a>
 </section>
 
 <section class="about-us">
@@ -87,10 +86,10 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas
             vitae animi rem pariatur incidunt libero optio esse quisquam illo omnis.
         </p>
-        <img src="${pageContext.request.contextPath}/resources/images/signature.svg"/>
+        <img src="<c:url value="/resources/images/signature.svg"/>"/>
     </div>
     <div class="about-us--image">
-        <img src="${pageContext.request.contextPath}/resources/images/about-us.jpg"/>
+        <img src="<c:url value="/resources/images/about-us.jpg"/>"/>
     </div>
 </section>
 

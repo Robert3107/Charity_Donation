@@ -4,7 +4,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -17,13 +16,11 @@ public class Donation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Size(min = 1)
+    @NotNull
     private int quantity;
     @OneToMany
-    @JoinColumn(name = "category_donation")
     private List<Category> categoryList = new ArrayList<>();
     @OneToOne
-    @JoinColumn(name = "institution_id")
     private Institution institution;
     @NotNull
     private String street;
@@ -31,27 +28,12 @@ public class Donation {
     private String city;
     @NotNull
     private String zipCode;
+    @NotNull
+    private String telephone;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private String pickUpComment;
-
-    public Donation(Long id, int quantity, List<Category> categoryList, Institution institution, String street,
-                    String city, String zipCode, LocalDate pickUpDate, LocalTime pickUpTime, String pickUpComment) {
-        this.id = id;
-        this.quantity = quantity;
-        this.categoryList = categoryList;
-        this.institution = institution;
-        this.street = street;
-        this.city = city;
-        this.zipCode = zipCode;
-        this.pickUpDate = pickUpDate;
-        this.pickUpTime = pickUpTime;
-        this.pickUpComment = pickUpComment;
-    }
-
-    public Donation() {
-    }
 
     public Long getId() {
         return id;
@@ -107,6 +89,14 @@ public class Donation {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
     public LocalDate getPickUpDate() {

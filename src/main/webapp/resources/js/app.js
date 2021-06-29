@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
-
+  const quantity = document.querySelector("#quantity");
+  const street = document.querySelector("#street");
+  const city = document.querySelector("#city");
+  const zipCode = document.querySelector("#zipCode");
+  const phoneNumber = document.querySelector("#telephone");
+  const pickUpDate = document.querySelector("#pickUpDate");
+  const pickUpTime = document.querySelector("#pickUpTime");
+  const pickUpComment = document.querySelector("#pickUpComment");
+  const category = document.querySelectorAll("[name=categoryList]");
+  const institution = document.querySelector("#institution");
   /**
    * Form Select
    */
@@ -143,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$form.querySelector("form").addEventListener("submit", e => this.submit(e));
     }
 
+
     /**
      * Update form front-end
      * Show next or previous section etc.
@@ -164,6 +174,18 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+
+      document.querySelector("#summQuantity").innerHTML = quantity.value;
+      document.querySelector("#summCategories").innerHTML = category.value;
+      document.querySelector("#summInstitutionName").innerHTML = institution.value;
+      document.querySelector("#summPickupStreet").innerHTML = street.value;
+      document.querySelector("#summPickupCity").innerHTML = city.value;
+      document.querySelector("#summPickupZipCode").innerHTML = zipCode.value;
+      document.querySelector("#summPhone").innerHTML = phoneNumber.value;
+      document.querySelector("#summPickupDate").innerHTML = pickUpDate.value;
+      document.querySelector("#summPickupTime").innerHTML = pickUpTime.value;
+      document.querySelector("#summPickUpComment").innerHTML = pickUpComment.value;
+
     }
 
   }
